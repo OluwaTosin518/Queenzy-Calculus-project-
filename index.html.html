@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+
+    </title>
+    <style>
+        .design{
+          height: 400px;
+          width: 300px;
+        border-radius: 10px;
+        border-style: solid;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        font-size: 10px;
+        background-color:#1a1a1a;
+        border-color: aliceblue;
+        
+        
+        
+
+        }
+        .finishng{
+          height: 400px;
+          line-height: normal;
+          
+          
+        }
+      
+        
+        .buttons{
+          display: grid;
+    grid-template-columns: repeat(4,60px);
+    grid-auto-rows: 40px;
+          gap: 4px;
+          margin-top:75px;
+          margin-bottom: 0px;
+          background-color: #2d2f36
+          ;
+          padding-bottom: 0px;
+          height:400px;
+          top: 50%;
+          position: fixed;
+          width: 300px;
+          
+        
+          
+        
+        }
+      .buttons button{
+        background-color:white;
+        color: black;
+        padding-top: 20px;
+        padding-bottom: 70px;
+        
+      }
+        .calculus{
+          font-size: 30px;
+          color: white;
+          text-align: right;
+          padding:0px;
+          padding-top: 0px;
+          margin-top: 0px;
+          margin-bottom: 0px;
+        
+
+          
+          
+          
+        }
+        .vet{
+          font-size: 16px;
+          text-align: center;
+          font-family:Arial;
+          font-weight: bold;
+          color: #72788d;
+        }
+        .intro{
+          text-align: center;
+          font-size: 28px;
+          color: #2d2f36;
+          margin-top: 0px;
+          margin-bottom:20px;
+          font-style: italic;
+        }
+      
+
+    </style>
+  </head>
+  <body>
+    <p class="intro">
+      <u>
+        Queenzy Calculus
+      </u>
+    </p>
+    <div class="finishng"
+    style="display: flex;
+    justify-content: center ;
+    align-items:left;
+    height: 400px;
+    position:fixed;
+    margin-left: 500px;
+
+        
+      
+    
+   
+    ">
+  
+    
+    <div  class="design">
+      <display class="calculus" id="calculus" disabled>
+         <p class="vet">Queenzy Calculus</p>
+        
+       
+      </display>
+    
+      
+      
+      <div class="buttons">
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')"
+        >2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button
+        onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('+')">+</button>
+        <button
+        onclick="press('-')">-</button>
+        <button onclick="press('*')">*</button>
+        <button onclick="press('/')">/</button>
+        <button
+        class="equal"
+        onclick="calculate()"
+        >=</button>
+        <button onclick="cleardisplay()">AC</button>
+        <button onclick="backspace()">x</button>
+
+      </div>
+</div>
+    </div>
+    
+    <script>
+const display= document.getElementById('calculus');
+
+function press(value){
+  display.innerText += value;}
+
+  function calculate(){
+    try {display.innerText =
+    eval(display.innerText);}
+    catch(error){
+      display.innerText= "Error"
+    }
+  }
+
+  function cleardisplay(){
+    display.innerText="";
+  }
+  function backspace(){
+    display.innerText=
+    display.innerText.slice(0, -1);
+  }
+
+
+    </script>
+     
+  </body>
+</html>
